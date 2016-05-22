@@ -175,26 +175,25 @@
 						"standard_field" : {
 							"user_info_id" : "nationwide_memorable_data",
 							"target" : "//*[@id='SubmittedMemorableInformation']"
-						}, {
-							"n_characters_challenge" : {
-								"user_info_id" : "nationwide_passnumber",
-								"characters" : [{
-										"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
-										"target" : "//*[@id='firstSelect']"
-									}, {
-										"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
-										"target" : "//*[@id='secondSelect']"
-									}, {
-										"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
-										"target" : "//*[@id='thirdSelect']"
-									}
-								]
-							}
 						}
-						],
-						"submit" : "//*[@id='Continue']"
+					}, {
+						"n_characters_challenge" : {
+							"user_info_id" : "nationwide_passnumber",
+							"characters" : [{
+									"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
+									"target" : "//*[@id='firstSelect']"
+								}, {
+									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
+									"target" : "//*[@id='secondSelect']"
+								}, {
+									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
+									"target" : "//*[@id='thirdSelect']"
+								}
+							]
+						}
 					}
-				]
+				],
+				"submit" : "//*[@id='Continue']"
 			}
 		]
 	}
