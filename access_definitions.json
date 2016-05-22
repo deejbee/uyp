@@ -186,7 +186,7 @@
 									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
 									"target" : "//*[@id='secondSelect']"
 								}, {
-									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
+									"character" : "//*[@id='memDataForm']/div[2]/div[3]/label",
 									"target" : "//*[@id='thirdSelect']"
 								}
 							]
