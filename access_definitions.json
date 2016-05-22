@@ -49,10 +49,10 @@
 			}, {
 				"id" : "crunch_password",
 				"label" : "Password",
-				"isPassword": true
+				"isPassword" : true
 			}, {
 				"id" : "crunch_word",
-				"label" : "Memorable word"				
+				"label" : "Memorable word"
 			}
 		],
 		"sites" : [{
@@ -106,7 +106,7 @@
 			}, {
 				"id" : "hl_password",
 				"label" : "Password",
-				"isPassword": true
+				"isPassword" : true
 			}
 		],
 		"sites" : [{
@@ -157,7 +157,7 @@
 			}, {
 				"id" : "nationwide_passnumber",
 				"label" : "Passnumber",
-				"isPassword": true
+				"isPassword" : true
 			}
 		],
 		"sites" : [{
@@ -172,23 +172,29 @@
 			}, {
 				"url" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login/NonRCALogin",
 				"fields" : [{
-						"n_characters_challenge" : {
-							"user_info_id" : "nationwide_passnumber",							
-							"characters" : [{
-									"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
-									"target" : "//*[@id='firstSelect']"
-								}, {
-									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
-									"target" : "//*[@id='secondSelect']"
-								}, {
-									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
-									"target" : "//*[@id='thirdSelect']"
-								}
-							]
+						"standard_field" : {
+							"user_info_id" : "nationwide_memorable_data",
+							"target" : "//*[@id='SubmittedMemorableInformation']"
+						}, {
+							"n_characters_challenge" : {
+								"user_info_id" : "nationwide_passnumber",
+								"characters" : [{
+										"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
+										"target" : "//*[@id='firstSelect']"
+									}, {
+										"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
+										"target" : "//*[@id='secondSelect']"
+									}, {
+										"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
+										"target" : "//*[@id='thirdSelect']"
+									}
+								]
+							}
 						}
+						],
+						"submit" : "//*[@id='Continue']"
 					}
-				],
-				"submit" : "//*[@id='Continue']"
+				]
 			}
 		]
 	}
