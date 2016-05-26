@@ -196,5 +196,79 @@
 				"submit" : "//*[@id='Continue']"
 			}
 		]
+	}, {
+		"name" : "Funding Circle",
+		"type" : "p2p",
+		"user_info" : [{
+				"id" : "funding_circle_email_address",
+				"label" : "Email address"
+			}, {
+				"id" : "funding_circle_password",
+				"label" : "Memorable data",
+				"isPassword" : true
+			}, {
+				"id" : "funding_circle_qa_best_friend",
+				"label" : "What was the name of your best friend at school?",
+				"isPassword" : true
+			}, {
+				"id" : "funding_circle_qa_grow_up",
+				"label" : "Where did you grow up?",
+				"isPassword" : true
+			}, {
+				"id" : "funding_circle_qa_school",
+				"label" : "What school did you attend when you were 10 years old?",
+				"isPassword" : true
+			}
+		],
+		"sites" : [{
+				"url" : "https://www.fundingcircle.com/login",
+				"fields" : [{
+						"standard_field" : {
+							"user_info_id" : "funding_circle_email_address",
+							"target" : "//*[@id=" email "]"
+						}, {
+							"standard_password" : {
+								"user_info_id" : "funding_circle_password",
+								"target" : "//*[@id=" password "]"
+							}
+						}
+						]
+					}, {
+						"url" : "https://www.fundingcircle.com/security-questions/",
+						"fields" : [{
+								"question_answer" : {
+									"user_info_id" : "funding_circle_qa_best_friend",
+									"question_target" : "//*[@id='wrapper']/div/div/section/div/form/div[1]/label",
+									"answer_target" : "//*[@id='answer']"
+								}
+							}
+						],
+						"submit" : "//*[@id='Continue']"
+					}, {
+						"url" : "https://www.fundingcircle.com/security-questions/",
+						"fields" : [{
+								"question_answer" : {
+									"user_info_id" : "funding_circle_qa_grow_up",
+									"question_target" : "//*[@id='wrapper']/div/div/section/div/form/div[1]/label",
+									"answer_target" : "//*[@id='answer']"
+								}
+							}
+						],
+						"submit" : "//*[@id='Continue']"
+					}, {
+						"url" : "https://www.fundingcircle.com/security-questions/",
+						"fields" : [{
+								"question_answer" : {
+									"user_info_id" : "funding_circle_qa_school",
+									"question_target" : "//*[@id='wrapper']/div/div/section/div/form/div[1]/label",
+									"answer_target" : "//*[@id='answer']"
+								}
+							}
+						],
+						"submit" : "//*[@id='Continue']"
+					}
+				]
+			}
+		]
 	}
-]
+}]
