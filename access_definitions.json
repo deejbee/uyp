@@ -225,11 +225,11 @@
 				"fields" : [{
 						"standard_field" : {
 							"user_info_id" : "funding_circle_email_address",
-							"target" : "//*[@id=" email "]"
+							"target" : "//*[@id='email']"
 						}, {
 							"standard_password" : {
 								"user_info_id" : "funding_circle_password",
-								"target" : "//*[@id=" password "]"
+								"target" : "//*[@id='password']"
 							}
 						}
 						]
