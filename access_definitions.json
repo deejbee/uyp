@@ -89,6 +89,56 @@
 			}
 		]
 	}, {
+		"name" : "CaxtonFX Visa card UK",
+		"sites" : [{
+				"url" : "https://cards.caxtonfx.com/#_ga=1.197085164.1322809498.1463813768",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='txtAccountID']",
+							"user_info_id" : "47df5757-636a-4dbb-adae-699565d3e2cc"
+						}
+					}, {
+						"standard_password" : {
+							"target" : "//*[@id='txtPassword']",
+							"user_info_id" : "15ef0812-391b-498d-829f-20f8ed3df1cd"
+						}
+					}
+				]
+			}, {
+				"url" : "https://cards.caxtonfx.com/cfxcard_login_step2.aspx",
+				"fields" : [{
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='lblLetter1']",
+									"target" : "//*[@id='ddLetter1']",
+									"$$hashKey" : "object:126"
+								}, {
+									"character" : "//*[@id='lblLetter2']",
+									"target" : "//*[@id='ddLetter2']",
+									"$$hashKey" : "object:130"
+								}
+							],
+							"user_info_id" : "74ef3143-f191-4d46-83d7-ae90ec11f1d9"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "47df5757-636a-4dbb-adae-699565d3e2cc",
+				"label" : "Account ID",
+				"isPassword" : true
+			}, {
+				"id" : "15ef0812-391b-498d-829f-20f8ed3df1cd",
+				"label" : "Password",
+				"isPassword" : true
+			}, {
+				"id" : "74ef3143-f191-4d46-83d7-ae90ec11f1d9",
+				"label" : "Mother's maiden name",
+				"isPassword" : true
+			}
+		]
+	}, {
 		"name" : "Crunch Accounting",
 		"type" : "accountants",
 		"user_info" : [{
