@@ -429,8 +429,7 @@
 				"isPassword" : true
 			}
 		]
-	},
-	{
+	}, {
 		"name" : "Santander UK",
 		"sites" : [{
 				"url" : "https://retail.santander.co.uk/LOGSUK_NS_ENS/BtoChannelDriver.ssobto?dse_operationName=LOGON",
@@ -573,6 +572,86 @@
 			}, {
 				"id" : "21019585-50bb-4a8f-ae33-c2daf0eb1fb6",
 				"label" : "Memorable date (YYYY)",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "Yorkshire Building Society",
+		"sites" : [{
+				"url" : "https://online.ybs.co.uk/public/authentication/login1.do",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='uid-ID']",
+							"user_info_id" : "c52911fc-4d21-4c4b-b166-e49e7be8bfb3"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='column2']/form/div[3]/div[2]/div/input"
+						}
+					}
+				]
+			}, {
+				"url" : "https://online.ybs.co.uk/public/authentication/login2.do",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@name='dateOfBirth.day']",
+							"user_info_id" : "66bd99fd-1693-496f-9ae1-702eb368c174"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@name='dateOfBirth.month']",
+							"user_info_id" : "d405b20a-557c-4545-9755-1467f23578cf"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@name='dateOfBirth.year']",
+							"user_info_id" : "6253f282-7bc7-4948-8310-212f8149173d"
+						}
+					}, {
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='column2']/form/div[3]/div[2]/div[1]/div[1]",
+									"target" : "//*[@id='char1-ID']",
+									"$$hashKey" : "object:353"
+								}, {
+									"character" : "//*[@id='column2']/form/div[3]/div[2]/div[2]/div[1]",
+									"target" : "//*[@id='char2-ID']",
+									"$$hashKey" : "object:357"
+								}, {
+									"character" : "//*[@id='column2']/form/div[3]/div[2]/div[3]/div[1]",
+									"target" : "//*[@id='char3-ID']",
+									"$$hashKey" : "object:361"
+								}
+							],
+							"user_info_id" : "e93bae0b-e88f-4cd4-af2a-5798acc46bff"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='column2']/form/div[4]/div[2]/div/input"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "c52911fc-4d21-4c4b-b166-e49e7be8bfb3",
+				"label" : "Customer number or username",
+				"isPassword" : true
+			}, {
+				"id" : "66bd99fd-1693-496f-9ae1-702eb368c174",
+				"label" : "Date of birth (DD - no proceeding zero)",
+				"isPassword" : true
+			}, {
+				"id" : "d405b20a-557c-4545-9755-1467f23578cf",
+				"label" : "Date of birth (MM - no proceeding zero)",
+				"isPassword" : true
+			}, {
+				"id" : "6253f282-7bc7-4948-8310-212f8149173d",
+				"label" : "Date of birth (YYYY)",
+				"isPassword" : true
+			}, {
+				"id" : "e93bae0b-e88f-4cd4-af2a-5798acc46bff",
+				"label" : "Password",
 				"isPassword" : true
 			}
 		]
