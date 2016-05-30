@@ -368,6 +368,69 @@
 			}
 		]
 	}, {
+		"name" : "Halifax UK",
+		"sites" : [{
+				"url" : "https://www.halifax-online.co.uk/personal/logon/login.jsp",
+				"fields" : [{
+						"standard_password" : {
+							"target" : "//*[@id='frmLogin:strCustomerLogin_userID']",
+							"user_info_id" : "dc94eb30-311f-4b2a-a169-845ee2c47118"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@id='frmLogin:strCustomerLogin_pwd']",
+							"user_info_id" : "31cc4ca8-5d86-4e47-92b3-b5621a36076a"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='frmLogin:btnLogin2']"
+						}
+					}
+				]
+			}, {
+				"url" : "https://secure.halifax-online.co.uk/personal/a/logon/entermemorableinformation.jsp",
+				"fields" : [{
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='frmentermemorableinformation1']/fieldset/div/div/div[1]/label",
+									"target" : "//*[@id='frmentermemorableinformation1:strEnterMemorableInformation_memInfo1']",
+									"$$hashKey" : "object:120"
+								}, {
+									"character" : "//*[@id='frmentermemorableinformation1']/fieldset/div/div/div[2]/label",
+									"target" : "//*[@id='frmentermemorableinformation1:strEnterMemorableInformation_memInfo2']",
+									"$$hashKey" : "object:124"
+								}, {
+									"character" : "//*[@id='frmentermemorableinformation1']/fieldset/div/div/div[3]/label",
+									"target" : "//*[@id='frmentermemorableinformation1:strEnterMemorableInformation_memInfo3']",
+									"$$hashKey" : "object:128"
+								}
+							],
+							"user_info_id" : "4f328a47-83c1-4fc0-aae8-32c82db307bf"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='frmentermemorableinformation1:btnContinue']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "dc94eb30-311f-4b2a-a169-845ee2c47118",
+				"label" : "Username",
+				"isPassword" : true
+			}, {
+				"id" : "31cc4ca8-5d86-4e47-92b3-b5621a36076a",
+				"label" : "Password",
+				"isPassword" : true
+			}, {
+				"id" : "4f328a47-83c1-4fc0-aae8-32c82db307bf",
+				"label" : "Memorable information",
+				"isPassword" : true
+			}
+		]
+	},
+	{
 		"name" : "Santander UK",
 		"sites" : [{
 				"url" : "https://retail.santander.co.uk/LOGSUK_NS_ENS/BtoChannelDriver.ssobto?dse_operationName=LOGON",
