@@ -41,6 +41,54 @@
 			}
 		]
 	}, {
+		"name" : "Barclaycard UK",
+		"sites" : [{
+				"url" : "https://www.barclaycard.co.uk/personal",
+				"fields" : [{
+						"standard_password" : {
+							"target" : "//*[@id='username']",
+							"user_info_id" : "03f9d29b-4243-45ac-9b80-442fa43ba346"
+						}
+					}, {
+						"standard_password" : {
+							"target" : "//*[@id='password']",
+							"user_info_id" : "daaf8748-d51d-4ddc-8bd0-18f8a157cf9b"
+						}
+					}
+				]
+			}, {
+				"url" : "https://bcol.barclaycard.co.uk/ecom/as2/validateMemorableWord.do",
+				"fields" : [{
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='firstIndex']",
+									"target" : "//*[@id='AS1']"
+								}, {
+									"character" : "//*[@id='secondIndex']",
+									"target" : "//*[@id='AS2']"
+								}
+							],
+							"user_info_id" : "f54d255d-7189-4507-b626-43459c030384"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "03f9d29b-4243-45ac-9b80-442fa43ba346",
+				"label" : "Username or ID number",
+				"isPassword" : true
+			}, {
+				"id" : "daaf8748-d51d-4ddc-8bd0-18f8a157cf9b",
+				"label" : "Passcode",
+				"isPassword" : true
+			}, {
+				"id" : "f54d255d-7189-4507-b626-43459c030384",
+				"label" : "Memorable word",
+				"isPassword" : true
+			}
+		]
+	}, {
 		"name" : "Crunch Accounting",
 		"type" : "accountants",
 		"user_info" : [{
