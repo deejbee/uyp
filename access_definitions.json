@@ -231,7 +231,9 @@
 						}
 					}
 				],
-				"click" : "//*[@id='submitPassword']"
+				"click" : {
+					"target": "//*[@id='submitPassword']"
+				}
 			}, {
 				"url" : "https://app.crunch.co.uk/crunch-core/login/step2.seam",
 				"fields" : [{
