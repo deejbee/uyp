@@ -10,7 +10,7 @@
 			}
 		],
 		"sites" : [{
-				"url" : "https://online.barclays.co.uk/signin1",
+				"url" : "https://bank.barclays.co.uk/olb/auth/LoginLink.action",
 				"fields" : [{
 						"n_characters_challenge" : {
 							"user_info_id" : "barclays_customer_id",
@@ -93,6 +93,11 @@
 		"sites" : [{
 				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll",
 				"fields" : [{
+						"content_match" : {
+							"query" : "//*[@id='user_id']/h1",
+							"content" : "User Identification Stage 1"
+						}
+					}, {
 						"standard_password" : {
 							"target" : "//*[@id='iCustId']",
 							"user_info_id" : "603b18bf-2098-43ee-bf46-3ecd97ca5827"
@@ -111,6 +116,10 @@
 								}
 							],
 							"user_info_id" : "343ffb1e-c95c-423b-a504-2be972a6789d"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='butt']"
 						}
 					}
 				]
@@ -135,6 +144,23 @@
 								}
 							],
 							"user_info_id" : "4350fa3f-2490-46af-8eee-7bc3835a09f6"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='butt']"
+						}
+					}
+				]
+			}, {
+				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll",
+				"fields" : [{
+						"content_match" : {
+							"query" : "//*[@id='data_right_page_title']/h1",
+							"content" : "My Portfolio"
+						}
+					}, {
+						"graph" : {
+							"target" : "//*[@id='input_generic']/table/tbody/tr[2]/td[4]"
 						}
 					}
 				]
@@ -229,11 +255,12 @@
 							"user_info_id" : "crunch_password",
 							"target" : "//*[@id='passwordDecoration:password']"
 						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='submitPassword']"
+						}
 					}
-				],
-				"click" : {
-					"target": "//*[@id='submitPassword']"
-				}
+				]
 			}, {
 				"url" : "https://app.crunch.co.uk/crunch-core/login/step2.seam",
 				"fields" : [{
@@ -253,6 +280,18 @@
 
 								}
 							]
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='login:submitMemorableWord']"
+						}
+					}
+				]
+			}, {
+				"url": "https://app.crunch.co.uk/crunch-core/client/home.seam",
+				"fields": [{
+						"graph" : {
+							"target" : "//*[@id='salesToDate']"
 						}
 					}
 				]
@@ -533,7 +572,15 @@
 						}
 					}
 				]
-			}
+			}, {
+				"url" : "https://retail.santander.co.uk/EBAN_Commercialoffers_ENS/BtoChannelDriver.ssobto",
+				"fields" : [{
+						"click" : {
+							"target" : "//*[@id='content']/div/div/div[3]/form/span/input"
+						}
+					}
+				]
+			},
 		],
 		"user_info" : [{
 				"id" : "755b53a0-05f7-4b0b-a6b0-5d3f8fdcac2d",
