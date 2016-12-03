@@ -288,8 +288,8 @@
 					}
 				]
 			}, {
-				"url": "https://app.crunch.co.uk/crunch-core/client/home.seam",
-				"fields": [{
+				"url" : "https://app.crunch.co.uk/crunch-core/client/home.seam",
+				"fields" : [{
 						"graph" : {
 							"target" : "//*[@id='salesToDate']"
 						}
@@ -350,7 +350,71 @@
 		]
 	}, {
 		"name" : "Nationwide",
-		"type" : "bank",
+		"sites" : [{
+				"url" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login",
+				"fields" : [{
+						"content_match" : {
+							"query" : "//*[@id='stageInner']/div/div[3]/div/div[2]/h2",
+							"content" : "Enter your customer number"
+						}
+					}, {
+						"standard_field" : {
+							"user_info_id" : "nationwide_customer_number",
+							"target" : "//*[@id='CustomerNumber']"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='Continue']"
+						}
+					}, {
+						"pause_until_found" : {
+							"target" : "1000"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='logInWithMemDataLink']"
+						}
+					}
+				]
+			}, {
+				"url" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login/NonRCALogin",
+				"fields" : [{
+						"content_match" : {
+							"query" : "//*[@id='stageInner']/div/div[3]/h1",
+							"content" : "Enter your security information"
+						}
+					}, {
+						"standard_field" : {
+							"user_info_id" : "nationwide_memorable_data",
+							"target" : "//*[@id='SubmittedMemorableInformation']"
+						}
+					}, {
+						"n_characters_challenge" : {
+							"user_info_id" : "nationwide_passnumber",
+							"characters" : [{
+									"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
+									"target" : "//*[@id='firstSelect']",
+									"$$hashKey" : "object:208"
+								}, {
+									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
+									"target" : "//*[@id='secondSelect']",
+									"$$hashKey" : "object:209"
+								}, {
+									"character" : "//*[@id='memDataForm']/div[2]/div[3]/label",
+									"target" : "//*[@id='thirdSelect']",
+									"$$hashKey" : "object:210"
+								}
+							]
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='Continue']"
+						}
+					}
+				],
+				"submit" : "//*[@id='Continue']"
+			}
+		],
 		"user_info" : [{
 				"id" : "nationwide_customer_number",
 				"label" : "Customer number"
@@ -361,42 +425,6 @@
 				"id" : "nationwide_passnumber",
 				"label" : "Passnumber",
 				"isPassword" : true
-			}
-		],
-		"sites" : [{
-				"url" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login/Login",
-				"fields" : [{
-						"standard_field" : {
-							"user_info_id" : "nationwide_customer_number",
-							"target" : "//*[@id='CustomerNumber']"
-						}
-					}
-				]
-			}, {
-				"url" : "https://onlinebanking.nationwide.co.uk/AccessManagement/Login/NonRCALogin",
-				"fields" : [{
-						"standard_field" : {
-							"user_info_id" : "nationwide_memorable_data",
-							"target" : "//*[@id='SubmittedMemorableInformation']"
-						}
-					}, {
-						"n_characters_challenge" : {
-							"user_info_id" : "nationwide_passnumber",
-							"characters" : [{
-									"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
-									"target" : "//*[@id='firstSelect']"
-								}, {
-									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
-									"target" : "//*[@id='secondSelect']"
-								}, {
-									"character" : "//*[@id='memDataForm']/div[2]/div[3]/label",
-									"target" : "//*[@id='thirdSelect']"
-								}
-							]
-						}
-					}
-				],
-				"submit" : "//*[@id='Continue']"
 			}
 		]
 	}, {
