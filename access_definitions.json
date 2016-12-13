@@ -430,16 +430,13 @@
 							"user_info_id" : "nationwide_passnumber",
 							"characters" : [{
 									"character" : "//*[@id='memDataForm']/div[2]/div[1]/label",
-									"target" : "//*[@id='firstSelect']",
-									"$$hashKey" : "object:208"
+									"target" : "//*[@id='firstSelect']"
 								}, {
 									"character" : "//*[@id='memDataForm']/div[2]/div[2]/label",
-									"target" : "//*[@id='secondSelect']",
-									"$$hashKey" : "object:209"
+									"target" : "//*[@id='secondSelect']"
 								}, {
 									"character" : "//*[@id='memDataForm']/div[2]/div[3]/label",
-									"target" : "//*[@id='thirdSelect']",
-									"$$hashKey" : "object:210"
+									"target" : "//*[@id='thirdSelect']"
 								}
 							]
 						}
@@ -645,7 +642,7 @@
 						}
 					}
 				]
-			},
+			}
 		],
 		"user_info" : [{
 				"id" : "755b53a0-05f7-4b0b-a6b0-5d3f8fdcac2d",
@@ -717,7 +714,8 @@
 				]
 			}
 		],
-		"user_info" : [{
+		"user_info" : [
+			{
 				"label" : "User name",
 				"isPassword" : true
 			}, {
