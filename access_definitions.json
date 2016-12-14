@@ -3,42 +3,6 @@
 		"sites" : [{
 				"url" : "https://bank.barclays.co.uk/olb/auth/LoginLink.action",
 				"fields" : [{
-						"content_match" : {
-							"query" : "//*[@id='passcode_option']/fieldset/ul/li[1]/p[1]",
-							"content" : "To view your account details, you will need your 5-digit passcode."
-						}
-					}, {
-						"pause_until_found" : {
-							"target" : "3000"
-						}
-					}, {
-						"standard_field" : {
-							"target" : "//*[@id='passcode']",
-							"user_info_id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f"
-						}
-					}, {
-						"n_characters_challenge" : {
-							"characters" : [{
-									"character" : "//*[@id='passcode_option']/fieldset/ul/li[3]/fieldset/legend/strong[1]",
-									"target" : "//*[@id='nameOne']",
-									"$$hashKey" : "object:377"
-								}, {
-									"character" : "//*[@id='passcode_option']/fieldset/ul/li[3]/fieldset/legend/strong[2]",
-									"target" : "//*[@id='nameTwo']",
-									"$$hashKey" : "object:381"
-								}
-							],
-							"user_info_id" : "c32374de-518f-4f4a-b106-68d854a536b2"
-						}
-					}, {
-						"click" : {
-							"target" : "//*[@id='log-in-to-online-banking2']"
-						}
-					}
-				]
-			}, {
-				"url" : "https://bank.barclays.co.uk/olb/auth/LoginLink.action",
-				"fields" : [{
 						"standard_field" : {
 							"user_info_id" : "barclays_customer_surname",
 							"target" : "//*[@id='surname']"
@@ -56,25 +20,49 @@
 						"click" : {
 							"target" : "//*[@id='forward']"
 						}
+					}, {
+						"pause_until_found" : {
+							"target" : "3000"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@id='passcode']",
+							"user_info_id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f"
+						}
+					}, {
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='passcode_option']/fieldset/ul/li[3]/fieldset/legend/strong[1]",
+									"target" : "//*[@id='nameOne']",
+									"$$hashKey" : "object:219"
+								}, {
+									"character" : "//*[@id='passcode_option']/fieldset/ul/li[3]/fieldset/legend/strong[2]",
+									"target" : "//*[@id='nameTwo']",
+									"$$hashKey" : "object:223"
+								}
+							],
+							"user_info_id" : "c32374de-518f-4f4a-b106-68d854a536b2"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='log-in-to-online-banking2']"
+						}
 					}
 				]
 			}
 		],
 		"user_info" : [{
-				"id" : "barclays_customer_id",
-				"label" : "Customer ID"
+				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
+				"label" : "Five digit passcode"
+			}, {
+				"id" : "c32374de-518f-4f4a-b106-68d854a536b2",
+				"label" : "Memorable word"
 			}, {
 				"id" : "barclays_customer_surname",
 				"label" : "Customer Surname"
 			}, {
 				"id" : "abc52cbe-4e7d-4239-bf27-2edf35dc54ec",
 				"label" : "Membership number"
-			}, {
-				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
-				"label" : "Five digit passcode"
-			}, {
-				"id" : "c32374de-518f-4f4a-b106-68d854a536b2",
-				"label" : "Memorable word"
 			}
 		]
 	}, {
@@ -714,8 +702,7 @@
 				]
 			}
 		],
-		"user_info" : [
-			{
+		"user_info" : [{
 				"label" : "User name",
 				"isPassword" : true
 			}, {
