@@ -208,32 +208,42 @@
 	}, {
 		"name" : "CaxtonFX Visa card UK",
 		"sites" : [{
-				"url" : "https://cards.caxtonfx.com/#_ga=1.197085164.1322809498.1463813768",
+				"url" : "https://myaccount.caxtonfx.com/Account/Login",
 				"fields" : [{
 						"standard_field" : {
-							"target" : "//*[@id='txtAccountID']",
+							"target" : "//*[@id='Email']",
 							"user_info_id" : "47df5757-636a-4dbb-adae-699565d3e2cc"
 						}
 					}, {
 						"standard_password" : {
-							"target" : "//*[@id='txtPassword']",
+							"target" : "//*[@id='Password']",
 							"user_info_id" : "15ef0812-391b-498d-829f-20f8ed3df1cd"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='loginForm']/form/fieldset/div[5]/div/input"
 						}
 					}
 				]
 			}, {
-				"url" : "https://cards.caxtonfx.com/cfxcard_login_step2.aspx",
+				"url" : "https://myaccount.caxtonfx.com/Account/PassphraseEntry?rememberMe=False",
 				"fields" : [{
 						"n_characters_challenge" : {
 							"characters" : [{
-									"character" : "//*[@id='lblLetter1']",
-									"target" : "//*[@id='ddLetter1']"
+									"character" : "//*[@id='frmPassphraseEntry']/fieldset/div[1]/label",
+									"target" : "//*[@id='Character1']",
+									"$$hashKey" : "object:311"
 								}, {
-									"character" : "//*[@id='lblLetter2']",
-									"target" : "//*[@id='ddLetter2']"
+									"character" : "//*[@id='frmPassphraseEntry']/fieldset/div[2]/label",
+									"target" : "//*[@id='Character2']",
+									"$$hashKey" : "object:315"
 								}
 							],
 							"user_info_id" : "74ef3143-f191-4d46-83d7-ae90ec11f1d9"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='btnPass']"
 						}
 					}
 				]
@@ -241,7 +251,7 @@
 		],
 		"user_info" : [{
 				"id" : "47df5757-636a-4dbb-adae-699565d3e2cc",
-				"label" : "Account ID",
+				"label" : "Email",
 				"isPassword" : true
 			}, {
 				"id" : "15ef0812-391b-498d-829f-20f8ed3df1cd",
