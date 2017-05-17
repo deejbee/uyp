@@ -1,28 +1,66 @@
 [{
 		"name" : "Barclays Bank",
+		"user_info" : [{
+				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
+				"label" : "Five digit passcode",
+				"isPassword" : true
+			}, {
+				"id" : "c32374de-518f-4f4a-b106-68d854a536b2",
+				"label" : "Memorable word",
+				"isPassword" : true
+			}, {
+				"id" : "barclays_customer_surname",
+				"label" : "Customer Surname",
+				"isPassword" : true
+			}, {
+				"id" : "abc52cbe-4e7d-4239-bf27-2edf35dc54ec",
+				"label" : "Membership number",
+				"isPassword" : true
+			}
+		],
+		"isCatalogGroup" : false,
 		"sites" : [{
-				"url" : "https://bank.barclays.co.uk/olb/auth/LoginLink.action",
+				"url" : "https://bank.barclays.co.uk/olb/authlogin/loginAppContainer.do#/identification",
 				"fields" : [{
-						"standard_field" : {
-							"user_info_id" : "barclays_customer_surname",
-							"target" : "//*[@id='surname']"
-						}
-					}, {
-						"standard_field" : {
-							"target" : "//*[@id='membership-num']",
-							"user_info_id" : "abc52cbe-4e7d-4239-bf27-2edf35dc54ec"
-						}
-					}, {
 						"pause_until_found" : {
-							"target" : "1000"
+							"target" : "500"
 						}
 					}, {
 						"click" : {
-							"target" : "//*[@id='forward']"
+							"target" : "//*[@id='login-bootstrap']/div/ng-include[1]/div/div[1]/ul/li[1]/a"
+						}
+					}
+				]
+			}, {
+				"url" : "https://bank.barclays.co.uk/olb/balances/PersonalFinancialSummary.action",
+				"fields" : [{
+						"balances" : {
+							"targetRoot" : "",
+							"targetRow" : "",
+							"targetLabel" : "//*[@id='a0']/ul/li[3]/ul[1]/li[1]/span/p/strong",
+							"targetBalance" : "//*[@id='a0']/ul/li[3]/ul[1]/li[1]/span/span/strong"
+						}
+					}
+				]
+			}, {
+				"url" : "https://bank.barclays.co.uk/olb/auth/MobiLoginLink.action",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "/html/body/div[1]/div[3]/div[1]/div/div/form/input[3]",
+							"user_info_id" : "barclays_customer_surname"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "/html/body/div[1]/div[3]/div[1]/div/div/form/input[5]",
+							"user_info_id" : "abc52cbe-4e7d-4239-bf27-2edf35dc54ec"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='Next']"
 						}
 					}, {
 						"pause_until_found" : {
-							"target" : "3000"
+							"target" : "2000"
 						}
 					}, {
 						"standard_field" : {
@@ -32,35 +70,31 @@
 					}, {
 						"n_characters_challenge" : {
 							"characters" : [{
-									"character" : "//*[@id='passcode_option']/fieldset/ul/li[3]/fieldset/legend/strong[1]",
-									"target" : "//*[@id='nameOne']"
+									"character" : "/html/body/div[1]/div[3]/div[1]/div/div/form/text()[11]",
+									"target" : "/html/body/div[1]/div[3]/div[1]/div/div/form/select[1]",
+									"$$hashKey" : "object:198"
 								}, {
-									"character" : "//*[@id='passcode_option']/fieldset/ul/li[3]/fieldset/legend/strong[2]",
-									"target" : "//*[@id='nameTwo']"
+									"character" : "/html/body/div[1]/div[3]/div[1]/div/div/form/text()[14]",
+									"target" : "/html/body/div[1]/div[3]/div[1]/div/div/form/select[2]",
+									"$$hashKey" : "object:202"
 								}
 							],
 							"user_info_id" : "c32374de-518f-4f4a-b106-68d854a536b2"
 						}
 					}, {
 						"click" : {
-							"target" : "//*[@id='log-in-to-online-banking2']"
+							"target" : "//*[@id='Login']"
 						}
 					}
 				]
-			}
-		],
-		"user_info" : [{
-				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
-				"label" : "Five digit passcode"
 			}, {
-				"id" : "c32374de-518f-4f4a-b106-68d854a536b2",
-				"label" : "Memorable word"
-			}, {
-				"id" : "barclays_customer_surname",
-				"label" : "Customer Surname"
-			}, {
-				"id" : "abc52cbe-4e7d-4239-bf27-2edf35dc54ec",
-				"label" : "Membership number"
+				"url" : "https://bank.barclays.co.uk/olb/balances/MobiBalanceOverview.action",
+				"fields" : [{
+						"click" : {
+							"target" : "//*[@id='navigation']/div/ul[3]/li/ul/li[2]/a"
+						}
+					}
+				]
 			}
 		]
 	}, {
@@ -146,6 +180,21 @@
 		]
 	}, {
 		"name" : "Cater Allen Private Bank",
+		"user_info" : [{
+				"id" : "603b18bf-2098-43ee-bf46-3ecd97ca5827",
+				"label" : "Customer ID",
+				"isPassword" : true
+			}, {
+				"id" : "343ffb1e-c95c-423b-a504-2be972a6789d",
+				"label" : "Personal Access Code (PAC)",
+				"isPassword" : true
+			}, {
+				"id" : "4350fa3f-2490-46af-8eee-7bc3835a09f6",
+				"label" : "Internet Password",
+				"isPassword" : true
+			}
+		],
+		"isCatalogGroup" : false,
 		"sites" : [{
 				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll",
 				"fields" : [{
@@ -162,13 +211,16 @@
 						"n_characters_challenge" : {
 							"characters" : [{
 									"character" : "//*[@id='tran_confirm']/label[1]",
-									"target" : "//*[@id='ipos1']"
+									"target" : "//*[@id='ipos1']",
+									"$$hashKey" : "object:72"
 								}, {
 									"character" : "//*[@id='tran_confirm']/label[2]",
-									"target" : "//*[@id='ipos2']"
+									"target" : "//*[@id='ipos2']",
+									"$$hashKey" : "object:73"
 								}, {
 									"character" : "//*[@id='tran_confirm']/label[3]",
-									"target" : "//*[@id='ipos3']"
+									"target" : "//*[@id='ipos3']",
+									"$$hashKey" : "object:74"
 								}
 							],
 							"user_info_id" : "343ffb1e-c95c-423b-a504-2be972a6789d"
@@ -190,13 +242,16 @@
 						"n_characters_challenge" : {
 							"characters" : [{
 									"character" : "//*[@id='tran_confirm2']/label[1]",
-									"target" : "//*[@id='iPasspos1']"
+									"target" : "//*[@id='iPasspos1']",
+									"$$hashKey" : "object:107"
 								}, {
 									"character" : "//*[@id='tran_confirm2']/label[2]",
-									"target" : "//*[@id='iPasspos2']"
+									"target" : "//*[@id='iPasspos2']",
+									"$$hashKey" : "object:108"
 								}, {
 									"character" : "//*[@id='tran_confirm2']/label[3]",
-									"target" : "//*[@id='iPasspos3']"
+									"target" : "//*[@id='iPasspos3']",
+									"$$hashKey" : "object:109"
 								}
 							],
 							"user_info_id" : "4350fa3f-2490-46af-8eee-7bc3835a09f6"
@@ -218,31 +273,39 @@
 						"graph" : {
 							"target" : "//*[@id='input_generic']/table/tbody/tr[2]/td[4]"
 						}
+					}, {
+						"balances" : {
+							"targetRoot" : "//*[@id='input_generic']/table/tbody",
+							"targetRow" : ".//tr",
+							"targetLabel" : ".//td[2]",
+							"targetBalance" : ".//td[4]"
+						}
 					}
 				]
-			}
-		],
-		"user_info" : [{
-				"id" : "603b18bf-2098-43ee-bf46-3ecd97ca5827",
-				"label" : "Customer ID",
-				"isPassword" : true
-			}, {
-				"id" : "343ffb1e-c95c-423b-a504-2be972a6789d",
-				"label" : "Personal Access Code (PAC)",
-				"isPassword" : true
-			}, {
-				"id" : "4350fa3f-2490-46af-8eee-7bc3835a09f6",
-				"label" : "Internet Password",
-				"isPassword" : true
 			}
 		]
 	}, {
 		"name" : "CaxtonFX Visa card UK",
+		"user_info" : [{
+				"id" : "47df5757-636a-4dbb-adae-699565d3e2cc",
+				"label" : "Email",
+				"isPassword" : true
+			}, {
+				"id" : "15ef0812-391b-498d-829f-20f8ed3df1cd",
+				"label" : "Password",
+				"isPassword" : true
+			}, {
+				"id" : "74ef3143-f191-4d46-83d7-ae90ec11f1d9",
+				"label" : "Mother's maiden name",
+				"isPassword" : true
+			}
+		],
+		"isCatalogGroup" : false,
 		"sites" : [{
 				"url" : "https://myaccount.caxtonfx.com/Account/Login",
 				"fields" : [{
 						"standard_field" : {
-							"target" : "//*[@id='Email']",
+							"target" : "//*[@id='UserName']",
 							"user_info_id" : "47df5757-636a-4dbb-adae-699565d3e2cc"
 						}
 					}, {
@@ -262,10 +325,12 @@
 						"n_characters_challenge" : {
 							"characters" : [{
 									"character" : "//*[@id='frmPassphraseEntry']/fieldset/div[1]/label",
-									"target" : "//*[@id='Character1']"
+									"target" : "//*[@id='Character1']",
+									"$$hashKey" : "object:92"
 								}, {
 									"character" : "//*[@id='frmPassphraseEntry']/fieldset/div[2]/label",
-									"target" : "//*[@id='Character2']"
+									"target" : "//*[@id='Character2']",
+									"$$hashKey" : "object:93"
 								}
 							],
 							"user_info_id" : "74ef3143-f191-4d46-83d7-ae90ec11f1d9"
@@ -276,20 +341,6 @@
 						}
 					}
 				]
-			}
-		],
-		"user_info" : [{
-				"id" : "47df5757-636a-4dbb-adae-699565d3e2cc",
-				"label" : "Email",
-				"isPassword" : true
-			}, {
-				"id" : "15ef0812-391b-498d-829f-20f8ed3df1cd",
-				"label" : "Password",
-				"isPassword" : true
-			}, {
-				"id" : "74ef3143-f191-4d46-83d7-ae90ec11f1d9",
-				"label" : "Mother's maiden name",
-				"isPassword" : true
 			}
 		]
 	}, {
@@ -556,26 +607,48 @@
 		]
 	}, {
 		"name" : "Funding Circle",
+		"user_info" : [{
+				"id" : "funding_circle_email_address",
+				"label" : "Email address"
+			}, {
+				"id" : "funding_circle_password",
+				"label" : "Password",
+				"isPassword" : true
+			}, {
+				"id" : "funding_circle_qa_best_friend",
+				"label" : "What was the name of your best friend at school?",
+				"isPassword" : true
+			}, {
+				"id" : "funding_circle_qa_grow_up",
+				"label" : "Where did you grow up?",
+				"isPassword" : true
+			}, {
+				"id" : "funding_circle_qa_school",
+				"label" : "What school did you attend when you were 10 years old?",
+				"isPassword" : true
+			}
+		],
+		"isCatalogGroup" : false,
 		"sites" : [{
 				"url" : "https://www.fundingcircle.com/login",
 				"fields" : [{
 						"standard_field" : {
 							"user_info_id" : "funding_circle_email_address",
-							"target" : "//*[@id='email']"
+							"target" : "//*[@id='user_username']"
 						}
 					}, {
 						"standard_password" : {
 							"user_info_id" : "funding_circle_password",
-							"target" : "//*[@id='password']"
+							"target" : "//*[@id='user_password']"
 						}
 					}, {
 						"click" : {
-							"target" : "//*[@id='login-container']/div/form/button"
+							"target" : "//*[@id='new_user']/section/div/input[5]"
 						}
 					}
 				]
 			}, {
-				"url" : "https://www.fundingcircle.com/security-questions/",
+				"url" : "https://www.fundingcircle.com/security-questions",
 				"fields" : [{
 						"pause_until_found" : {
 							"target" : "600"
@@ -596,7 +669,7 @@
 				],
 				"submit" : "//*[@id='Continue']"
 			}, {
-				"url" : "https://www.fundingcircle.com/security-questions/",
+				"url" : "https://www.fundingcircle.com/security-questions",
 				"fields" : [{
 						"pause_until_found" : {
 							"target" : "600"
@@ -616,7 +689,7 @@
 				],
 				"submit" : "//*[@id='Continue']"
 			}, {
-				"url" : "https://www.fundingcircle.com/security-questions/",
+				"url" : "https://www.fundingcircle.com/security-questions",
 				"fields" : [{
 						"pause_until_found" : {
 							"target" : "600"
@@ -624,7 +697,7 @@
 					}, {
 						"question_answer" : {
 							"user_info_id" : "funding_circle_qa_school",
-							"question_target" : "//*[@id='wrapper']/div/div/section/div/form/div[1]/label",
+							"question_target" : "//*[@id='wrapper']/div/div/section/div/form/div/label",
 							"answer_target" : "//*[@id='user_input']",
 							"question" : "What school did you attend when you were 10 years old?"
 						}
@@ -662,27 +735,6 @@
 						}
 					}
 				]
-			}
-		],
-		"user_info" : [{
-				"id" : "funding_circle_email_address",
-				"label" : "Email address"
-			}, {
-				"id" : "funding_circle_password",
-				"label" : "Password",
-				"isPassword" : true
-			}, {
-				"id" : "funding_circle_qa_best_friend",
-				"label" : "What was the name of your best friend at school?",
-				"isPassword" : true
-			}, {
-				"id" : "funding_circle_qa_grow_up",
-				"label" : "Where did you grow up?",
-				"isPassword" : true
-			}, {
-				"id" : "funding_circle_qa_school",
-				"label" : "What school did you attend when you were 10 years old?",
-				"isPassword" : true
 			}
 		]
 	}, {
@@ -1095,6 +1147,244 @@
 			}, {
 				"id" : "2a485297-4815-4a93-be82-39588e247fe1",
 				"label" : "Password",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "First Direct",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://www1.firstdirect.com/1/2/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3gDgzAfSycDUy8LAzNDbz8vbzMDKADKR5rFO7s7epiY-wD5YZ6uBp4mTiYGpr5uhgaexmDdFibeBn7enkEuBs4ejiYeHkGGMN0FuaGKAPRSfDc!/",
+				"fields" : []
+			}
+		]
+	}, {
+		"name" : "TSB",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://online.tsb.co.uk/personal/logon/login.jsp",
+				"fields" : []
+			}
+		]
+	}, {
+		"name" : "Co-op",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://bank.co-operativebank.co.uk/CB/p#_frmLoginStatements",
+				"fields" : []
+			}
+		]
+	}, {
+		"name" : "Clydesdale",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://home.cbonline.co.uk/raluV8/reglm-web/login.ctl",
+				"fields" : []
+			}
+		]
+	}, {
+		"name" : "Danske",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://ebanking2.danskebank.co.uk/pub/logon/logon.aspx?ss=JS&secsystem=JS",
+				"fields" : []
+			}
+		]
+	}, {
+		"name" : "Tesco",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://www.tescobank.com/sss/auth",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='login-uid']",
+							"user_info_id" : "a8ddb0ec-e110-47b5-9c1e-716a96e868f6"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='login-uid-submit-button']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "a8ddb0ec-e110-47b5-9c1e-716a96e868f6",
+				"label" : "Username",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "Marks & Spencer",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://www7.marksandspencer.com/1/2/!ut/p/c5/04_SB8K8xLLM9MSSzPy8xBz9CP0os3gDgzAfSycDUy8LAzNDbz8vbzMDKNAvyHZUBAAEuMrS/",
+				"fields" : []
+			}
+		]
+	}, {
+		"name" : "Bank of Scotland",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://online.bankofscotland.co.uk/personal/logon/login.jsp",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='frmLogin:strCustomerLogin_userID']",
+							"user_info_id" : "d72a95f5-8088-4ece-a7a2-fbe26979b667"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@id='frmLogin:strCustomerLogin_pwd']",
+							"user_info_id" : "f0a9aa5c-ce46-4286-b494-30f583658558"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='frmLogin:btnLogin2']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "d72a95f5-8088-4ece-a7a2-fbe26979b667",
+				"label" : "Username",
+				"isPassword" : true
+			}, {
+				"id" : "f0a9aa5c-ce46-4286-b494-30f583658558",
+				"label" : "Password",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "Virgin Money",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://uk.virginmoney.com/virgin/service/?product=current-account&dd=0",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='alsoClientsChoice']",
+							"user_info_id" : "a34c2fde-f6cc-46d2-b64d-ee64dbb8ab5a"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='ets2-signin-btn']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "a34c2fde-f6cc-46d2-b64d-ee64dbb8ab5a",
+				"label" : "Customer ID",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "Lloyds",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://online.lloydsbank.co.uk/personal/logon/login.jsp",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='frmLogin:strCustomerLogin_userID']",
+							"user_info_id" : "0fccaaa8-2993-496a-aef9-bb29c82d992c"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@id='frmLogin:strCustomerLogin_pwd']",
+							"user_info_id" : "2e260b06-7ecc-47df-b2e7-d09c07388f68"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='frmLogin:btnLogin2']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "0fccaaa8-2993-496a-aef9-bb29c82d992c",
+				"label" : "User ID",
+				"isPassword" : true
+			}, {
+				"id" : "2e260b06-7ecc-47df-b2e7-d09c07388f68",
+				"label" : "Password",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "NatWest",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://www.nwolb.com/login.aspx",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='ctl00_mainContent_LI5TABA_DBID_edit']",
+							"user_info_id" : "288b7dfc-9800-4559-8b94-fb872e71e7bc"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='ctl00_mainContent_LI5TABA_LI5-LBA_button_button']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "288b7dfc-9800-4559-8b94-fb872e71e7bc",
+				"label" : "Customer number",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "HSBC",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://www.hsbc.co.uk/1/2/",
+				"fields" : [{
+						"click" : {
+							"target" : "//*[@id='onlineBanking']/ul/li[2]/a/span"
+						}
+					}
+				]
+			}, {
+				"url" : "https://www.security.hsbc.co.uk/gsa?idv_cmd=idv.SaaSSecurityCommand",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='Username1']",
+							"user_info_id" : "b6fa3072-78c9-4c81-beab-1df78a781f55"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "b6fa3072-78c9-4c81-beab-1df78a781f55",
+				"label" : "Username",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "RBS",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://www.rbsdigital.com/login.aspx",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='ctl00_mainContent_LI5TABA_DBID_edit']",
+							"user_info_id" : "3239750f-2980-4705-a8e9-3b8e4783e3e8"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='ctl00_mainContent_LI5TABA_LI5-LBA_button_button']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "3239750f-2980-4705-a8e9-3b8e4783e3e8",
+				"label" : "Customer number",
 				"isPassword" : true
 			}
 		]
