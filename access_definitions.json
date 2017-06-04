@@ -843,7 +843,7 @@
 					}
 				]
 			}, {
-				"url" : "https://retail.santander.co.uk/EBAN_Accounts_ENS/channel.ssobto?dse_operationName=MyAccounts",
+				"url" : "https://retail.santander.co.uk/EBAN_Accounts_ENS/BtoChannelDriver.ssobto",
 				"fields" : [{
 						"balances" : {
 							"targetRoot" : "//*[@id='content']/ul",
@@ -1467,6 +1467,39 @@
 		"user_info" : [{
 				"id" : "3239750f-2980-4705-a8e9-3b8e4783e3e8",
 				"label" : "Customer number",
+				"isPassword" : true
+			}
+		]
+	},
+	{
+		"name" : "Capital One 360",
+		"sites" : [{
+				"url" : "https://verified.capitalone.com/sic-ui/#/esignin?Product=Bank",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='username']",
+							"user_info_id" : "0c0756ae-caff-4f75-8af3-cc86dcd5226a"
+						}
+					}, {
+						"standard_field" : {
+							"target" : "//*[@id='password']",
+							"user_info_id" : "c0f7722d-f934-40f5-838d-e225acc142cf"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='id-signin-submit']"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "0c0756ae-caff-4f75-8af3-cc86dcd5226a",
+				"label" : "Username",
+				"isPassword" : true
+			}, {
+				"id" : "c0f7722d-f934-40f5-838d-e225acc142cf",
+				"label" : "Password",
 				"isPassword" : true
 			}
 		]
