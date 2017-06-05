@@ -1,6 +1,6 @@
 [{
 		"name" : "Barclays Bank",
-		"country": "GB"
+		"country": "GB",
 		"user_info" : [{
 				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
 				"label" : "Five digit passcode",
