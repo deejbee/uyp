@@ -1,6 +1,6 @@
 [{
 		"name" : "Barclays Bank",
-		"country" : "GB",
+		"country": "GB"
 		"user_info" : [{
 				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
 				"label" : "Five digit passcode",
@@ -19,15 +19,12 @@
 				"isPassword" : true
 			}
 		],
+		"isCatalogGroup" : false,
 		"sites" : [{
-				"url" : "https://bank.barclays.co.uk/olb/authlogin/loginAppContainer.do#/identification",
+				"url" : "https://bank.barclays.co.uk/olb/auth/LoginLink.action",
 				"fields" : [{
-						"pause_until_found" : {
-							"target" : "500"
-						}
-					}, {
 						"click" : {
-							"target" : "//*[@id='login-bootstrap']/div/ng-include[1]/div/div[1]/ul/li[1]/a"
+							"target" : "//*[@id='access-links']/ul/li[1]/a"
 						}
 					}
 				]
@@ -1470,9 +1467,10 @@
 				"isPassword" : true
 			}
 		]
-	},
-	{
+	}, {
 		"name" : "Capital One 360",
+		"country" : "US",
+		"incomplete" : true,
 		"sites" : [{
 				"url" : "https://verified.capitalone.com/sic-ui/#/esignin?Product=Bank",
 				"fields" : [{
@@ -1499,6 +1497,40 @@
 				"isPassword" : true
 			}, {
 				"id" : "c0f7722d-f934-40f5-838d-e225acc142cf",
+				"label" : "Password",
+				"isPassword" : true
+			}
+		]
+	}, {
+		"name" : "Chase",
+		"country" : "US",
+		"incomplete" : true,
+		"sites" : [{
+				"url" : "https://secure01a.chase.com/web/auth/",
+				"fields" : [{
+						"standard_field" : {
+							"target" : "//*[@id='userId-input-field']",
+							"user_info_id" : "d65588a4-c6df-41f6-a37c-5007613667a1"
+						}
+					}, {
+						"standard_password" : {
+							"target" : "//*[@id='password-input-field']",
+							"user_info_id" : "b863207e-2396-496c-b914-821c766dedb5"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='signin-button']/span"
+						}
+					}
+				]
+			}
+		],
+		"user_info" : [{
+				"id" : "d65588a4-c6df-41f6-a37c-5007613667a1",
+				"label" : "Username",
+				"isPassword" : true
+			}, {
+				"id" : "b863207e-2396-496c-b914-821c766dedb5",
 				"label" : "Password",
 				"isPassword" : true
 			}
