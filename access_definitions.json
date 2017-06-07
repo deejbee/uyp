@@ -1,6 +1,6 @@
 [{
 		"name" : "Barclays Bank",
-		"country": "GB",
+		"country" : "GB",
 		"user_info" : [{
 				"id" : "36205ae3-c554-4880-a2a0-c4f088d72c9f",
 				"label" : "Five digit passcode",
@@ -21,25 +21,6 @@
 		],
 		"isCatalogGroup" : false,
 		"sites" : [{
-				"url" : "https://bank.barclays.co.uk/olb/auth/LoginLink.action",
-				"fields" : [{
-						"click" : {
-							"target" : "//*[@id='access-links']/ul/li[1]/a"
-						}
-					}
-				]
-			}, {
-				"url" : "https://bank.barclays.co.uk/olb/balances/PersonalFinancialSummary.action",
-				"fields" : [{
-						"balances" : {
-							"targetRoot" : "",
-							"targetRow" : "",
-							"targetLabel" : "//*[@id='a0']/ul/li[3]/ul[1]/li[1]/span/p/strong",
-							"targetBalance" : "//*[@id='a0']/ul/li[3]/ul[1]/li[1]/span/span/strong"
-						}
-					}
-				]
-			}, {
 				"url" : "https://bank.barclays.co.uk/olb/auth/MobiLoginLink.action",
 				"fields" : [{
 						"standard_field" : {
@@ -87,6 +68,17 @@
 				"fields" : [{
 						"click" : {
 							"target" : "//*[@id='navigation']/div/ul[3]/li/ul/li[2]/a"
+						}
+					}
+				]
+			}, {
+				"url" : "https://bank.barclays.co.uk/olb/balances/PersonalFinancialSummary.action",
+				"fields" : [{
+						"balances" : {
+							"targetRoot" : "",
+							"targetRow" : "",
+							"targetLabel" : "//*[@id='a0']/ul/li[3]/ul[1]/li[1]/span/p/strong",
+							"targetBalance" : "//*[@id='a0']/ul/li[3]/ul[1]/li[1]/span/span/strong"
 						}
 					}
 				]
