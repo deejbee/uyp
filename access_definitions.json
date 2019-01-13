@@ -188,31 +188,17 @@
 			}
 		],
 		"sites" : [{
-				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll",
+				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll#top",
+				"isLoginPage" : true,
 				"fields" : [{
 						"content_match" : {
 							"query" : "//*[@id='user_id']/h1",
-							"content" : "User Identification Stage 1"
+							"content" : "Welcome to Cater Allen Internet Banking - User Identification Stage 1"
 						}
 					}, {
 						"standard_password" : {
-							"target" : "//*[@id='iCustId']",
+							"target" : "//*[@id='iUserName']",
 							"user_info_id" : "603b18bf-2098-43ee-bf46-3ecd97ca5827"
-						}
-					}, {
-						"n_characters_challenge" : {
-							"characters" : [{
-									"character" : "//*[@id='tran_confirm']/label[1]",
-									"target" : "//*[@id='ipos1']"
-								}, {
-									"character" : "//*[@id='tran_confirm']/label[2]",
-									"target" : "//*[@id='ipos2']"
-								}, {
-									"character" : "//*[@id='tran_confirm']/label[3]",
-									"target" : "//*[@id='ipos3']"
-								}
-							],
-							"user_info_id" : "343ffb1e-c95c-423b-a504-2be972a6789d"
 						}
 					}, {
 						"click" : {
@@ -222,6 +208,7 @@
 				]
 			}, {
 				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll",
+				"isLoginPage" : true,
 				"fields" : [{
 						"content_match" : {
 							"query" : "//*[@id='user_id']/h1",
@@ -230,17 +217,45 @@
 					}, {
 						"n_characters_challenge" : {
 							"characters" : [{
-									"character" : "//*[@id='tran_confirm2']/label[1]",
+									"character" : "//*[@id='tran_confirm'][1]/label[1]",
+									"target" : "//*[@id='ipos1']"
+								}, {
+									"character" : "//*[@id='tran_confirm'][1]/label[2]",
+									"target" : "//*[@id='ipos2']"
+								}, {
+									"character" : "//*[@id='tran_confirm'][1]/label[3]",
+									"target" : "//*[@id='ipos3']"
+								}
+							],
+							"user_info_id" : "343ffb1e-c95c-423b-a504-2be972a6789d"
+						}
+					}, {
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='tran_confirm'][2]/label[1]",
 									"target" : "//*[@id='iPasspos1']"
 								}, {
-									"character" : "//*[@id='tran_confirm2']/label[2]",
+									"character" : "//*[@id='tran_confirm'][2]/label[2]",
 									"target" : "//*[@id='iPasspos2']"
 								}, {
-									"character" : "//*[@id='tran_confirm2']/label[3]",
+									"character" : "//*[@id='tran_confirm'][2]/label[3]",
 									"target" : "//*[@id='iPasspos3']"
 								}
 							],
 							"user_info_id" : "4350fa3f-2490-46af-8eee-7bc3835a09f6"
+						}
+					}, {
+						"click" : {
+							"target" : "//*[@id='butt']"
+						}
+					}
+				]
+			}, {
+				"url" : "https://www.caterallenonline.co.uk/WebAccess.dll#top",
+				"fields" : [{
+						"content_match" : {
+							"query" : "//*[@id='data_right_page_title']/h1",
+							"content" : "Unable to process your request"
 						}
 					}, {
 						"click" : {
@@ -254,10 +269,6 @@
 						"content_match" : {
 							"query" : "//*[@id='data_right_page_title']/h1",
 							"content" : "My Portfolio"
-						}
-					}, {
-						"graph" : {
-							"target" : "//*[@id='input_generic']/table/tbody/tr[2]/td[4]"
 						}
 					}, {
 						"balances" : {
@@ -402,10 +413,18 @@
 				"label" : "Username"
 			}, {
 				"id" : "hl_date_of_birth",
-				"label" : "Date of Birth"
+				"label" : "Date of birth (ddmmyy)"
 			}, {
 				"id" : "hl_password",
 				"label" : "Password",
+				"isPassword" : true
+			}, {
+				"id" : "45080eeb-f929-48b9-beef-75665139fce9",
+				"label" : "Secure Number",
+				"isPassword" : true
+			}, {
+				"id" : "fa386f43-38e4-40fe-9d23-51385138b942",
+				"label" : "Online Password",
 				"isPassword" : true
 			}
 		],
@@ -445,6 +464,26 @@
 							]
 						}
 					}, {
+						"standard_field" : {
+							"user_info_id" : "fa386f43-38e4-40fe-9d23-51385138b942",
+							"target" : "//*[@id='online-password-verification']"
+						}
+					}, {
+						"n_characters_challenge" : {
+							"characters" : [{
+									"character" : "//*[@id='secure-number-container']/div[contains(@class,'secure-number-container__label')][1]",
+									"target" : "(//*[@class='secure-number-container__label']/div[@class='secure-number-mobile-input']/input)[1]"
+								}, {
+									"character" : "//*[@id='secure-number-container']/div[contains(@class,'secure-number-container__label')][2]",
+									"target" : "(//*[@class='secure-number-container__label']/div[@class='secure-number-mobile-input']/input)[2]"
+								}, {
+									"character" : "//*[@id='secure-number-container']/div[contains(@class,'secure-number-container__label')][3]",
+									"target" : "(//*[@class='secure-number-container__label']/div[@class='secure-number-mobile-input']/input)[3]"
+								}
+							],
+							"user_info_id" : "45080eeb-f929-48b9-beef-75665139fce9"
+						}
+					}, {
 						"click" : {
 							"target" : "//*[@id='submit']"
 						}
@@ -461,11 +500,29 @@
 							"targetRoot" : "//*[@id='content-body-full']/div[3]/div[2]/table/tbody",
 							"targetBalance" : ".//td[2]/a",
 							"targetLabel" : ".//td[1]/a",
-							"targetRow" : ".//tr"
+							"targetRow" : ".//tr",
+							"accountTransactionsLink" : ".//td[1]/a"
+						}
+					}
+				]
+			}, {
+				"url" : "https:\/\/online\\.hl\\.co\\.uk\/my-accounts\/account_summary\/account\/\\d+",
+				"urlIsRegex" : "true",
+				"fields" : [{
+						"transactions" : {
+							"targetRoot" : "//*[@id='holdings-table']/tbody",
+							"targetRow" : "./tr",
+							"targetDate" : "",
+							"targetDateFormat" : "",
+							"targetDescription" : "./td[1]",
+							"targetAmount" : "",
+							"targetAmountNegate" : false,
+							"targetBalance" : "./td[4]"
 						}
 					}, {
-						"pause_until_found" : {
-							"target" : "1000"
+						"help" : "This should click back to the accounts list page so the next item in the list can be clicked",
+						"click" : {
+							"target" : "//*[@id='breadcrumbs']/div[2]/div[2]/ul/li[2]/a"
 						}
 					}
 				]
