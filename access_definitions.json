@@ -31,12 +31,12 @@
 						}
 					}, {
 						"standard_field": {
-							"target": "//input[@name='membershipNumber']",
+							"target": "//input[@name='membershipNum']",
 							"user_info_id": "abc52cbe-4e7d-4239-bf27-2edf35dc54ec"
 						}
 					}, {
 						"click": {
-							"target": "//*[@id='Next']"
+							"target": "//*[@title='Next step']"
 						}
 					}
 				]
@@ -48,24 +48,24 @@
 						}
 					}, {
 						"standard_field": {
-							"target": "//*[@id='passcode']",
+							"target": "//*[@id='passcode0']",
 							"user_info_id": "36205ae3-c554-4880-a2a0-c4f088d72c9f"
 						}
 					}, {
 						"n_characters_challenge": {
 							"characters": [{
-									"character": "//form/text()[contains(.,'Select')][1]",
-									"target": "//select[@name='firstMemorableCharacter']"
+									"character": "//label[@id='label-memorableCharacters']/strong[1]",
+									"target": "//div[@name='firstMemorableCharacter']"
 								}, {
-									"character": "//form/text()[contains(.,'Select')][2]",
-									"target": "//select[@name='secondMemorableCharacter']"
+									"character": "//label[@id='label-memorableCharacters']/strong[2]",
+									"target": "//div[@name='secondMemorableCharacter']"
 								}
 							],
 							"user_info_id": "c32374de-518f-4f4a-b106-68d854a536b2"
 						}
 					}, {
 						"click": {
-							"target": "//*[@id='Login']"
+							"target": "//*[@id='btn-login-authSFA']"
 						}
 					}
 				]
@@ -1307,7 +1307,7 @@
 				"url": "https://home.cbonline.co.uk/raluV8/reglm-web/securityQuestion.ctl",
 				"fields": [{
 						"question_answer": {
-							"question": "The name of a memorable place to you? *",
+							"question": "The name of a memorable place to you?ï¿½*",
 							"question_target": "//*[@id='innercontent']/form/div[2]/div[1]/label",
 							"answer": "",
 							"answer_target": "//*[@id='Answer']",
