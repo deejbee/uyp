@@ -19,7 +19,7 @@
 			}
 		],
 		"sites": [{
-				"url": "https://bank.barclays.co.uk/olb/auth/MobiLoginLink.action",
+				"url": "https://bank.barclays.co.uk/olb/authlogin/loginAppContainer.do#/identification",
 				"fields": [{
 						"pause_until_found": {
 							"target": "1"
@@ -34,14 +34,14 @@
 							"target": "//input[@name='membershipNum']",
 							"user_info_id": "abc52cbe-4e7d-4239-bf27-2edf35dc54ec"
 						}
-					}, {
+					},  {
 						"click": {
-							"target": "//*[@title='Next step']"
+							"target": "//*[@title='Next Step']"
 						}
 					}
 				]
 			}, {
-				"url": "https://bank.barclays.co.uk/olb/auth/MobiLoginLink.action",
+				"url": "https://bank.barclays.co.uk/olb/authlogin/loginAppContainer.do#/identification",
 				"fields": [{
 						"pause_until_found": {
 							"target": "1"
@@ -55,10 +55,10 @@
 						"n_characters_challenge": {
 							"characters": [{
 									"character": "//label[@id='label-memorableCharacters']/strong[1]",
-									"target": "//div[@name='firstMemorableCharacter']"
+									"target": "//div[@name='firstMemorableCharacter']/[@id='selectedCharacter']"
 								}, {
 									"character": "//label[@id='label-memorableCharacters']/strong[2]",
-									"target": "//div[@name='secondMemorableCharacter']"
+									"target": "//div[@name='secondMemorableCharacter']/[@id='selectedCharacter']"
 								}
 							],
 							"user_info_id": "c32374de-518f-4f4a-b106-68d854a536b2"
