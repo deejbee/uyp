@@ -369,43 +369,54 @@
 			}
 		],
 		"sites": [{
-				"url": "https://app.crunch.co.uk/crunch-core/login/step1.seam",
-				"fields": [{
+				"url": "https://accounts.crunch.co.uk/#/",
+				"fields": [
+					{
+						"content_match": {
+							"query": "//*/label[@for='email']",
+							"content": "Email"
+						}
+					}, {
 						"standard_field": {
 							"user_info_id": "crunch_email",
-							"target": "//*[@id='usernameDecoration:username']"
+							"target": "//*[@id='email']"
 						}
 					}, {
 						"standard_password": {
 							"user_info_id": "crunch_password",
-							"target": "//*[@id='passwordDecoration:password']"
+							"target": "//*[@id='password']"
 						}
 					}, {
 						"click": {
-							"target": "//*[@id='submitPassword']"
+							"target": "//*/button[@data-qa='QA_LogInFormSubmitButton']"
 						}
 					}
 				]
 			}, {
-				"url": "https://app.crunch.co.uk/crunch-core/login/step2.seam",
+				"url": "https://accounts.crunch.co.uk/#/",
 				"fields": [{
+						"content_match": {
+							"query": "//*/p[@data-qa='QA_LogInFormMemorableWordHeading']",
+							"content": "Enter your memorable word"
+						}
+					},{
 						"n_characters_challenge": {
 							"user_info_id": "crunch_word",
 							"characters": [{
-									"character": "//*[@id=\"login\"]/div[1]/fieldset/ul/li[1]/label",
-									"target": "//*[@id=\"login:pos1Decoration:pos1\"]"
+									"character": "//*/label[@for='memorableWordCharacter0']",
+									"target": "//*/input[@id='memorableWordCharacter0']"
 								}, {
-									"character": "//*[@id=\"login\"]/div[1]/fieldset/ul/li[2]/label",
-									"target": "//*[@id=\"login:pos2Decoration:pos2\"]"
+									"character": "//*/label[@for='memorableWordCharacter1']",
+									"target": "//*/input[@id='memorableWordCharacter1']"
 								}, {
-									"character": "//*[@id=\"login\"]/div[1]/fieldset/ul/li[3]/label",
-									"target": "//*[@id=\"login:pos3Decoration:pos3\"]"
+									"character": "//*/label[@for='memorableWordCharacter2']",
+									"target": "//*/input[@id='memorableWordCharacter2']"
 								}
 							]
 						}
 					}, {
 						"click": {
-							"target": "//*[@id='login:submitMemorableWord']"
+							"target": "//*/button[@data-qa='QA_LogInFormMemorableWordSubmitButton']"
 						}
 					}
 				]
