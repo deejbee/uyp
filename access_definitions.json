@@ -394,6 +394,10 @@
             }, {
                 "url": "https://accounts.crunch.co.uk/#/",
                 "fields": [{
+                        "pause_until_found": {
+                            "target": "1000"
+                        }
+                    }, {
                         "content_match": {
                             "query": "//*/p[@data-qa='QA_LogInFormMemorableWordHeading']",
                             "content": "Enter your memorable word"
