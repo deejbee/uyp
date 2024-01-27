@@ -1662,5 +1662,64 @@
                 "isPassword": true
             }
         ]
+    }, {
+        "name": "Wise",
+        "sites": [{
+                "url": "https://wise.com/",
+                "fields": [{
+                        "click": {
+                            "target": "//*[@id='navbar']/ul[3]/li[1]/a"
+                        }
+                    }
+                ]
+            }, {
+                "url": "https://wise.com/login",
+                "fields": [{
+                        "standard_field": {
+                            "target": "//*[@id='email']",
+                            "user_info_id": "026ea3da-ffb6-439b-829d-55cca60058ea"
+                        }
+                    }, {
+                        "standard_password": {
+                            "target": "//*[@id='password']",
+                            "user_info_id": "50c4d269-61d3-45b5-b0c7-7aae2a660256"
+                        }
+                    }, {
+                        "click": {
+                            "target": "//*[@type=\"submit\"]"
+                        }
+                    }
+                ]
+            }, {
+                "url": "https://wise.com/home",
+                "fields": [{
+                        "content_match": {
+                            "query": "//*[@id='main']/div/div/div/div[1]/div/button/div[2]/span[1]",
+                            "content": "Main Group"
+                        }
+                    }, {
+                        "balances": {
+                            "targetRoot": "",
+                            "targetRow": "",
+                            "targetLabel": "//*[@id='main']/div/div/div/div[1]/div/button/div[2]/span[1]",
+                            "targetBalance": "//*[@id='main']/div/div/div/div[1]/div/button/div[2]/span[2]"
+                        }
+                    }, {
+                        "graph": {
+                            "target": "//*[@id='main']/div/div/div/div[1]/div/button/div[2]/span[2]"
+                        }
+                    }
+                ]
+            }
+        ],
+        "user_info": [{
+                "id": "026ea3da-ffb6-439b-829d-55cca60058ea",
+                "label": "email"
+            }, {
+                "id": "50c4d269-61d3-45b5-b0c7-7aae2a660256",
+                "label": "password",
+                "isPassword": true
+            }
+        ]
     }
 ]
